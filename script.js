@@ -18,9 +18,7 @@ datasubmit.addEventListener('submit', async (event) => {
             window.alert('Your username field is blank Pleased enter the user name')
         }
         else {
-            const res = await fetch(`http://api.github.com/users/${userdata.trim()}`, {
-                method: 'GET'
-            });
+            const res = await fetch(`http://api.github.com/users/${userdata.trim()}`);
             userinput.value = ""
             const data = await res.json();
             document.title = `User Search Github : ${data.name}`
